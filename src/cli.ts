@@ -123,7 +123,7 @@ function writeClaudeDesktopConfig(apiKey: string) {
 
 function writeClaudeCodeConfig(apiKey: string) {
   try {
-    execFileSync('claude', ['mcp', 'add', 'greed-compute', '-e', `GREED_API_KEY=${apiKey}`, '--', 'npx', 'greed-compute-mcp'], { stdio: 'ignore' })
+    execFileSync('claude', ['mcp', 'add', 'greed-compute', '-s', 'user', '-e', `GREED_API_KEY=${apiKey}`, '--', 'npx', 'greed-compute-mcp'], { stdio: 'ignore' })
     return true
   } catch {
     return false
