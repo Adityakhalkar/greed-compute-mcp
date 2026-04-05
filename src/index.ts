@@ -8,7 +8,28 @@ const BASE = process.env.GREED_COMPUTE_URL || 'https://compute.deep-ml.com'
 const API_KEY = process.env.GREED_API_KEY || ''
 
 if (!API_KEY) {
-  console.error('greed-compute-mcp: set GREED_API_KEY environment variable')
+  console.error(`
+  greed-compute-mcp needs your API key.
+
+  Get one at: https://greed-compute-ui.vercel.app/login
+
+  Then run with:
+    GREED_API_KEY=gc_your_key npx greed-compute-mcp
+
+  Or add to Claude Desktop config:
+    {
+      "mcpServers": {
+        "greed-compute": {
+          "command": "npx",
+          "args": ["greed-compute-mcp"],
+          "env": { "GREED_API_KEY": "gc_your_key" }
+        }
+      }
+    }
+
+  Or Claude Code:
+    claude mcp add greed-compute -e GREED_API_KEY=gc_your_key -- npx greed-compute-mcp
+`)
   process.exit(1)
 }
 
