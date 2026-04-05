@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "description": "MCP server for greed-compute — gives LLMs stateful Python execution",
   "bin": {
-    "greed-compute-mcp": "./dist/index.js"
+    "greed-compute-mcp": "./dist/index.js",
+    "greed-compute": "./dist/cli.js"
   },
   "main": "./dist/index.js",
   "type": "module",
@@ -25,7 +26,7 @@
     "@modelcontextprotocol/sdk": "^1.12.1"
   },
   "devDependencies": {
-    "typescript": "^5.7.0",
-    "@types/node": "^22.0.0"
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
   }
 }
